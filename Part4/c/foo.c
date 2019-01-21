@@ -2,14 +2,26 @@
 #include <stdio.h>
 
 int i = 0;
+int j=0;
 
 // Note the return type: void*
 void* incrementingThreadFunction(){
+
+for(j=0; j<1000000; j++) { 
+          
+
+ 	i=i+1;
     // TODO: increment i 1_000_000 times
+}
     return NULL;
 }
 
 void* decrementingThreadFunction(){
+
+for(j=0; j<1000000; j++){
+           
+	i=i-1;
+}
     // TODO: decrement i 1_000_000 times
     return NULL;
 }
@@ -17,6 +29,12 @@ void* decrementingThreadFunction(){
 
 int main(){
     // TODO: declare incrementingThread and decrementingThread (hint: google pthread_create)
+
+pthread_t incrementingThread;
+    
+
+pthread_t decrementingThread;
+
     pthread_create(&incrementingThread, NULL, incrementingThreadFunction, NULL);
     pthread_create(&decrementingThread, NULL, decrementingThreadFunction, NULL);
     
