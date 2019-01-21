@@ -88,7 +88,7 @@ Coroutines:
  
  ### With this in mind: What is the workaround for the GIL (Hint: it's another module)?
  
-> 
+> In a multi processor multiple processes are used instead of thread. Each of the python process gets its own python interpreter and memory space in order to avoid GIL. 
  
  ### What does `func GOMAXPROCS(n int) int` change? 
 
